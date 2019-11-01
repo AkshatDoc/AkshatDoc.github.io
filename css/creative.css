@@ -488,8 +488,8 @@ mark,
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  width: 500px;
+  height: 300px;
 }
 
 .img-thumbnail {
@@ -497,8 +497,8 @@ mark,
   background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
-  max-width: 100%;
-  height: auto;
+  width: 500px;
+  height: 300px;
 }
 
 .figure {
@@ -9739,4 +9739,8 @@ header.masthead h1 {
 img.ico{
   margin: 20px,20px;
 
+}
+
+#titleIn{
+  color: orangered;
 }
