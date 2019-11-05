@@ -9927,42 +9927,42 @@ hr.light {
     color: #f4623a!important
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     #mainNav {
         box-shadow: none;
-        background-color: transparent
+        background-color: transparent;
     }
-    #mainNav .navbar-brand {
-        color: rgba(255, 255, 255, .7)
+    #mainNav .navbar-brand .nav-item {
+        color: rgba(255, 255, 255, 0.7);
     }
     #mainNav .navbar-brand:hover {
-        color: #fff
+        color: #fff;
     }
-    #mainNav .navbar-nav .nav-item .nav-link .dropbtn {
-        color: rgba(255, 255, 255, .7);
-        padding: 0 1rem
+    #mainNav .navbar-nav {
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0 1rem;
     }
-    #mainNav .navbar-nav .nav-item .nav-link:hover .dropbtn {
-        color: #fff
+    #mainNav .navbar-nav {
+        color: #fff;
     }
-    #mainNav .navbar-nav .nav-item:last-child .nav-link .dropbtn {
-        padding-right: 0
+    #mainNav .navbar-nav .nav-item:last-child .nav-link {
+        padding-right: 0;
     }
     #mainNav.navbar-scrolled {
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-        background-color: #fff
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: #fff;
     }
     #mainNav.navbar-scrolled .navbar-brand {
-        color: #212529
+        color: #212529;
     }
     #mainNav.navbar-scrolled .navbar-brand:hover {
-        color: #f4623a
+        color: #f4623a;
     }
-    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
-        color: #212529
+    #mainNav.navbar-scrolled .navbar-nav {
+        color: #acc7e2;
     }
-    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-        color: #f4623a
+    #mainNav.navbar-scrolled .navbar-nav:hover {
+        color: #f4623a;
     }
 }
 

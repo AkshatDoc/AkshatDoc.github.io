@@ -9932,20 +9932,20 @@ hr.light {
         box-shadow: none;
         background-color: transparent;
     }
-    #mainNav .navbar-brand {
+    #mainNav .navbar-brand .nav-item {
         color: rgba(255, 255, 255, 0.7);
     }
     #mainNav .navbar-brand:hover {
         color: #fff;
     }
-    #mainNav .navbar-nav .nav-item .nav-link .dropbtn {
+    #mainNav .navbar-nav {
         color: rgba(255, 255, 255, 0.7);
         padding: 0 1rem;
     }
-    #mainNav .navbar-nav .nav-item .nav-link:hover .dropbtn {
+    #mainNav .navbar-nav {
         color: #fff;
     }
-    #mainNav .navbar-nav .nav-item:last-child .nav-link .dropbtn {
+    #mainNav .navbar-nav .nav-item:last-child .nav-link {
         padding-right: 0;
     }
     #mainNav.navbar-scrolled {
@@ -9958,10 +9958,10 @@ hr.light {
     #mainNav.navbar-scrolled .navbar-brand:hover {
         color: #f4623a;
     }
-    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link .dropbtn {
-        color: #212529;
+    #mainNav.navbar-scrolled .navbar-nav {
+        color: #acc7e2;
     }
-    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover .dropbtn {
+    #mainNav.navbar-scrolled .navbar-nav:hover {
         color: #f4623a;
     }
 }
@@ -10089,7 +10089,7 @@ div#banner {
 }
 
 div#banner-content {
-    width: 400px;
+    width: 800px;
     margin: 0 auto;
     padding: 5px;
     text-align: center;
