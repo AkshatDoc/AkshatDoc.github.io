@@ -9932,7 +9932,7 @@ hr.light {
         box-shadow: none;
         background-color: transparent;
     }
-    #mainNav .navbar-brand .nav-item {
+    #mainNav .navbar-brand {
         color: rgba(255, 255, 255, 0.7);
     }
     #mainNav .navbar-brand:hover {
