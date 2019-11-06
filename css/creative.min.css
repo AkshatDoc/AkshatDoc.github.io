@@ -9911,7 +9911,7 @@ hr.light {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link .dropbtn {
-    color: #6c757d;
+    color: #afbbc5;
     font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
     font-size: .9rem;
@@ -10092,4 +10092,17 @@ div#banner-content {
     margin: 0 auto;
     padding: 5px;
     text-align: center;
+}
+
+.parallax {
+    /* The image used */
+    background-image: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../img/bg-masthead.jpg");
+    ;
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
