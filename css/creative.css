@@ -10089,10 +10089,7 @@ div#banner {
 }
 
 div#banner-content {
-    width: 800px;
-    margin: 0 auto;
-    padding: 5px;
-    text-align: center;
+    padding: 15px;
 }
 
 .parallax {
@@ -10106,4 +10103,13 @@ div#banner-content {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.grad {
+    height: 200px;
+    background-image: linear-gradient(white, grey);
+}
+
+.grad2 {
+    height: 200px;
 }
