@@ -301,6 +301,8 @@
                 this.height = height;
                 this.x = x;
                 this.y = y;
+                this.speedX = 0;
+                this.speedY = 0;
                 this.update = function () {
                     ctx = myGameArea.context;
                     ctx.fillStyle = color;
@@ -314,22 +316,14 @@
 
             function updateGameArea() {
                 myGameArea.clear();
-                myGamePiece.speedX = 0;
-                myGamePiece.speedY = 0;
-                if (myGameArea.key && myGameArea.key == 115) { myGamePiece.speedX = -1; }
+                if (myGameArea.key && myGameArea.key == 115) {myGamePiece.speedX = -1; }
                 if (myGameArea.key && myGameArea.key == 119) { myGamePiece.speedX = 1; }
                 if (myGameArea.key && myGameArea.key == 97) { myGamePiece.speedY = -1; }
                 if (myGameArea.key && myGameArea.key == 100) { myGamePiece.speedY = 1; }
                 myGamePiece.newPos();
                 myGamePiece.update();
             }
-
-            function stopMove() {
-                myGamePiece.speedX = 0;
-                myGamePiece.speedY = 0;
-            }
-
-            function focus(){
+            function focus() {
                 document.getElementById("mycanvas").focus;
             }
         </script>
