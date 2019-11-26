@@ -10117,3 +10117,20 @@ div#banner-content {
     border: 1px solid #d3d3d3;
     background-color: #f1f1f1;
 }
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+body#blogy {
+    font-family: Arial;
+    padding: 40px;
+    background: #f1f1f1;
+}
