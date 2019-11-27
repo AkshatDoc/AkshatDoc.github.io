@@ -10119,7 +10119,7 @@ div#banner-content {
 }
 
 .card {
-    background-color: white;
+    background-color: #4a4948;
     padding: 20px;
     margin-top: 20px;
 }
@@ -10131,6 +10131,7 @@ div#banner-content {
 
 body#blogy {
     font-family: Arial;
+    color: white;
     padding: 40px;
-    background: #f1f1f1;
+    background: #8d8c8b;
 }
