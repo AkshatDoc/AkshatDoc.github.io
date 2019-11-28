@@ -517,8 +517,8 @@ mark {
 }
 
 .img-fluid {
-    width: 500px;
-    height: 400px;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
 }
 
@@ -10135,4 +10135,12 @@ body#blogy {
     color: white;
     padding: 40px;
     background: #8d8c8b;
+}
+
+.cor {
+    word-break: keep-all;
+    float: left;
+    width: 50%;
+    border: 1px solid var(--orange);
+    padding: 24px;
 }
