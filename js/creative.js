@@ -56,3 +56,14 @@ for (i = 0; i < coll.length; i++) {
         }
     });
 }
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("drop").style.top = "0";
+    } else {
+        document.getElementById("drop").style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+}
