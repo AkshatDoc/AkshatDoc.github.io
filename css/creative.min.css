@@ -10196,3 +10196,14 @@ div#banner-content {
     width: 25%;
     padding-left: 20px;
 }
+
+header.masthead#blog {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background: linear-gradient(to bottom, rgba(92, 77, 66, .8) 0, rgba(92, 77, 66, .8) 100%), url(../img/blog.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    border-radius: 15%;
+}

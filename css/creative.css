@@ -10178,3 +10178,13 @@ body#blogy {
     overflow: hidden;
     background-color: #f1f1f1;
 }
+
+header.masthead#blog {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background: linear-gradient(to bottom, rgba(92, 77, 66, .8) 0, rgba(92, 77, 66, .8) 100%), url(../img/blog.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
