@@ -22,6 +22,8 @@
 
     <!-- Theme CSS - Includes Bootstrap -->
     <link href="css/creative.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 
 
 </head>
@@ -58,6 +60,7 @@
                                 <a class="nav-link " href="page2.html#td">Tech Design</a>
                                 <a class="nav-link " href="page2.html#compeng">Comp Eng</a>
                                 <a class="nav-link " href="page2.html#soft">Software</a>
+                                <a class="nav-link" href="page2.html#botl">Bottl'd</a>
                             </li>
                         </div>
                     </div>
@@ -279,6 +282,44 @@
         </div>
     </section>
 
+
+    <section class="page-section" id="botl">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 ">
+                        <h2 class="mt-0 text-center">Bottl'd</h2>
+                        <hr class="divider my-4">
+                        <p class="mb-5 text-center">A Club started by OTHS Students to recycle water bottles into greenhouses</p>
+                        <div>
+                                <img class="mySlides w3-animate-fading" src="img/Projects/bottld/IMG_6935.JPG" style="width:100%">
+                                <img class="mySlides w3-animate-fading" src="img/Projects/bottld/IMG_6939.JPG" style="width:100%">
+                                <img class="mySlides w3-animate-fading" src="img/Projects/bottld/blue logo on black.png" style="width:100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+            <script>
+                    var myIndex = 0;
+                    carousel();
+                    
+                    function carousel() {
+                      var i;
+                      var x = document.getElementsByClassName("mySlides");
+                      for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";  
+                      }
+                      myIndex++;
+                      if (myIndex > x.length) {myIndex = 1}    
+                      x[myIndex-1].style.display = "block";  
+                      setTimeout(carousel, 9000);    
+                    }
+                    </script>
+        </section>
 
 
 
