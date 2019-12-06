@@ -26,279 +26,310 @@
 
 </head>
 
-<body id="blogy">
+<!--
+Author: Werner Stoop, 2012
+This is free and unencumbered software released into the public domain.
+http://unlicense.org/
+-->
+<html>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Akshat Doctor</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html#portfolio">Clubs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html#events">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
-                    </li>
-                    <div class="dropdown nav-item">
-                        <a class="dropbtn nav-link js-scroll-trigger" href="page2.html">Projects</a>
-                        </li>
-                        <div class="dropdown-content">
-                            <li class="nav-item">
-                                <a class="nav-link " href="page2.html#td">Tech Design</a>
-                                <a class="nav-link " href="page2.html#compeng">Comp Eng</a>
-                                <a class="nav-link " href="page2.html#soft">Software</a>
-                            </li>
-                        </div>
-                    </div>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="blog.html">Blog</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<head>
+    <title>Buzzword Bingo 2.0</title>
 
-    <!-- About Section -->
-    <section class="page-section bg-primary" id="about">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">About ME!</h2>
-                    <hr class="divider light my-4">
-                    <p class="text-white-50 mb-4"> Below this you will find a compendium of my projects, either in CAD, Photos or codebase <br> I use SolidWorks for all my CAD projects, Arduino and Fritzing for the electronics and I primarily program in Java/Android Studio. As I love
-                        learning new things, I am currently attempting to learn Python and create my new website in HTML. If you have any questions about any of the projects, feel free to contact me at any time!
-                    </p>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="index.html">Contact!</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <style>
+        h2 {
+            background: rgb(230, 255, 230);
+            text-align: center;
+            padding: 10px;
+            border: 1px solid green;
+        }
+        
+        body {
+            font-family: Verdana;
+            margin-left: 20px;
+            margin-right: 20px
+        }
+        
+        td {
+            padding: 10px 20px;
+            border-top: 1px solid lightgray;
+            border-left: 1px solid lightgray;
+            border-bottom: 1px solid darkgray;
+            border-right: 1px solid darkgray;
+        }
+        
+        .error {
+            background-color: #FF7F7F;
+            color: red;
+            padding: 5px;
+            margin: 20px 50px;
+            border: 1px solid red;
+        }
+        
+        .highlight {
+            background: #47FF84;
+        }
+        
+        a {
+            color: green;
+        }
+        
+        td label {
+            cursor: pointer;
+        }
+        
+        form {
+            margin: 5px;
+            padding: 5px;
+            color: green;
+        }
+        
+        #instructions {
+            display: none;
+            border: 1px solid green;
+            margin: 10px;
+            padding: 20px;
+        }
+    </style>
 
-    <div class="parallax2">
+    <script type="text/javascript">
+        words = [
+            "Agile",
+            "Alignment",
+            "Analytics",
+            "Artifacts",
+            "Audit Trail",
+            "Automated",
+            "Best Practices",
+            "Big Data",
+            "Business Process",
+            "Cloud",
+            "Compliance",
+            "Configurable",
+            "Convergence",
+            "Cross-Platform",
+            "Data Extractions",
+            "Data Manipulation",
+            "Data Validation",
+            "Design Integrity",
+            "Distributed",
+            "Enhancements",
+            "Enterprise",
+            "Gamification",
+            "Harness",
+            "High Level",
+            "HTML5",
+            "Impact",
+            "Incentivize",
+            "Industry Standards",
+            "Infrastructure",
+            "Innovation",
+            "Intellectual capital",
+            "Iterative",
+            "Layered Architecture",
+            "Leverage",
+            "Logistics",
+            "Maintenance Cycle",
+            "Meta Data",
+            "Methodology",
+            "Multi-tiered",
+            "Niche",
+            "On-Line",
+            "Open Source",
+            "Open Standards",
+            "Outside the Box",
+            "Paradigm",
+            "Platform",
+            "Pluggable",
+            "Proactive",
+            "Project",
+            "Relationship",
+            "Requirement",
+            "Right-sizing",
+            "Road Map",
+            "SaaS",
+            "Scalable",
+            "Service Oriented Architecture",
+            "Skills transfer",
+            "Solution",
+            "Streamlined",
+            "Synergise",
+            "Technical",
+            "User Experience",
+            "Utilise",
+            "Value-added",
+            "Web 2.0",
+            "Workflow",
+            "XML"
+        ];
+
+        var cells = {};
+
+        function generate() {
+            var usedWords = [];
+
+            var node = document.getElementById("grid");
+
+            if (node.innerHTML && !confirm("Are you sure you want to regenerate?"))
+                return;
+
+            var html = '<table border="0">';
+            for (var y = 0; y < 5; y++) {
+                html += "<tr>"
+                for (var x = 0; x < 5; x++) {
+                    do {
+                        var i = Math.round(Math.random() * (words.length - 1));
+                        var word = words[i];
+                    } while (usedWords.indexOf(word) >= 0);
+                    usedWords.push(word);
+                    html += '<td id="cell_' + x + '_' + y + '"><label><input id="chk-cell_' + x + '_' + y + '" type="checkbox" onclick="cellClicked(\'cell_' + x + '_' + y + "')\">" + word + "</label></td>";
+                }
+                html += "</tr>"
+            }
+            html += "</table>";
+            node.innerHTML = html;
+            save("BuzzwordBingo.grid", html);
+            saveGameState();
+        }
+
+        /* http://diveintohtml5.info/storage.html */
+        function supports_html5_storage() {
+            try {
+                return 'localStorage' in window && window['localStorage'] !== null;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function cellClicked(id) {
+            var c = document.getElementById("chk-" + id);
+            var d = document.getElementById(id);
+            d.className = (c.checked) ? "highlight" : "";
+            saveGameState();
+        }
+
+        function saveGameState() {
+            for (var y = 0; y < 5; y++) {
+                for (var x = 0; x < 5; x++) {
+                    var id = 'cell_' + x + '_' + y;
+                    var c = document.getElementById("chk-" + id);
+                    save("BuzzwordBingo." + id, c.checked);
+                }
+            }
+        }
+
+        function loadGameState() {
+            for (var y = 0; y < 5; y++) {
+                for (var x = 0; x < 5; x++) {
+                    var id = 'cell_' + x + '_' + y;
+                    var c = document.getElementById("chk-" + id);
+                    c.checked = (load("BuzzwordBingo." + id) == 'true');
+                    var d = document.getElementById(id);
+                    d.className = (c.checked) ? "highlight" : "";
+                }
+            }
+        }
+
+        function toggle(id) {
+            var elem = document.getElementById(id);
+            if (elem.style.display == "block")
+                elem.style.display = "none";
+            else
+                elem.style.display = "block";
+        }
+
+        save = function(key, value) {};
+        load = function(key) {
+            return null
+        };
+
+        function start() {
+            if (supports_html5_storage()) {
+                save = function(key, value) {
+                    localStorage.setItem(key, value);
+                };
+                load = function(key) {
+                    return localStorage.getItem(key);
+                };
+            } else {
+                alert("Your browser does not support localStorage.\nYou won't be able to persist the Bingo grid.\nUpgrading your browser may help.");
+                return;
+            }
+
+            var grid = load("BuzzwordBingo.grid");
+            if (grid) {
+                console.log("Loaded a previously generated grid");
+                var node = document.getElementById("grid");
+                node.innerHTML = grid;
+                loadGameState();
+            }
+        }
+    </script>
+</head>
+
+<body onLoad="start()">
+    <h1>Buzzword Bingo 2.0</h1>
+
+    An exciting game for 2 or more players that is guaranteed to increase meeting participation.
+
+    <a href="javascript:toggle('instructions');">Instructions...</a>
+
+    <noscript>
+<div class="error">
+<strong>Problem:</strong>
+<p><em>
+You do not have JavaScript enabled. JavaScript must be enabled for this application to work.
+</em></p>
+</div>
+</noscript>
+
+    <div id="instructions">
+        <h2>Instructions</h2>
+        <ol>
+            <noscript><li>Enable JavaScript</li></noscript>
+            <li>Click <strong>Generate</strong> to create your Bingo board.</li>
+            <li>Print. Or (<em>new in v2.0</em>) keep it open in your browser.</li>
+            <li>Whenever someone uses one of the words during a meeting, check it off.</li>
+            <li>When you've checked off an entire row or column, yell &quot;Bingo&quot;</li>
+            <li>First one to yell &quot;Bingo&quot; is declared the winner. Participants agree upon prizes beforehand.</li>
+        </ol>
+        <p>
+            For more information, see <a href="http://dilbert.com/fast/1994-02-22/" target="_new">here</a>.
+        </p>
+        <p>
+            If you need to add more buzzwords, well, you know where to find the source code.
+        </p>
     </div>
+    <form>
+        <input type="button" value="Generate" onClick="generate();" />
+    </form>
+    <h2>Grid</h2>
+    <div id="grid"></div>
+</body>
 
-    <!-- Tech Design Section -->
-    <section class="page-section" id="td">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mt-0">Tech Design</h2>
-                    <hr class="divider my-4">
-                    <h6 class="text-black-50">I have done many dfferent projects using SolidWorks and highlighted here are my favourite projects!</h6>
-                    <div class="row no-gutters">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="portfolio-box-caption p-3">
-                                <a href="https://en.wikipedia.org/wiki/Numerical_control">
-                                    <img class="img-fluid" id="pro" src="img/Projects/coming-soon-v2.jpg">
-                                </a>
-                                <div class="project-name">
-                                    <p>DIY CNC</p>
-                                </div>
-                                <div class="project-category text-black-50">
-                                    <p>After using my school's CNC, I gained an obsession with automated macheniry. I decided that I wanted to make my own CNC. I went through many many different design iterations, using different technologies, like sliders
-                                        or rods and I finally came up with one design. This design allows people to change the head from a router bit to a laser bit and much much more.</p>
-                                </div>
-                            </div>
-                        </div>
+</html>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="portfolio-box-caption p-3">
-                                <a href="https://docs.google.com/document/d/1DeT880G7rjqpRm6dZO_b6yHANUGUqOPrHQB0vYl4-W8/edit?usp=sharing">
-                                    <img class="img-fluid" id="pro" src="img/Projects/render 2.JPG">
-                                </a>
-                                <div class="project-name">
-                                    <p>ChairBot</p>
-                                </div>
-                                <div class="project-category text-black-50">
-                                    <p>In my grade 12 Tech Design class, I was given the opportunity to design a new outreach robot for our team. Previously, we had a plastic chair on top of a small robot, which worked really well. The main problem I had
-                                        with it was how it looked, so I decided to change that up. At first, I wanted to put an office chair on it but then I realized that it would be much safer is was a leaned back chair, like an Adirondack! I designed
-                                        this along with the robot for 2 weeks and am currently in the build stage of the project! Photos coming soon</p>
-                                </div>
-                                <a class="btn btn-primary text-center" href="https://workbench.grabcad.com/workbench/projects/gcwO8fleTy2JizJe2-dkbF_X8bmmtTxZuKnmJ48ZpISbMI#/space/gc1PGDb7CWmoeuY9srAtey1bsyx__bUNAOJXK-fY_3-ZT-">Some
-                                    more projects</a>
-                                <br>
-                                <a href="https://akshatdr.wixsite.com/akshatdoc">My old website</a>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="portfolio-box-caption p-3">
-                                <a href="https://docs.google.com/document/d/1gII_WA7yFct347TZ7fXqOOybJGZbgkyJEBTmJEEMiqI/edit?usp=sharing">
-                                    <img class="img-fluid" id="pro" src="img/Projects/PT Tech .jpg">
-                                </a>
-                                <div class="project-name">
-                                    <p>Shelf Life</p>
-                                </div>
-                                <div class="project-category text-black-50">
-                                    <p>In my grade 11 Tech Design class, I was given the opportunity to design a project of my choosing. I wanted to design a shelving system for people who were unable to reach high shelves and wanted autonomous living. I
-                                        took inspiration from a specific company from Sweden:<a href="https://www.granberg.se/en/our-products/accessible-kitchen/lifting-systems-wall-cabinet/">Granberg</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <div class="parallax2">
+
+
+<!-- Footer -->
+<footer class="bg-light py-5">
+    <div class="container">
+        <div class="small text-center text-muted">Akshat Doctor</div>
     </div>
+</footer>
 
-    <!--Comp Engineering Section-->
-    <section class="page-section" id="compeng">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 ">
-                    <h2 class="mt-0 text-center">Computer Engineering</h2>
-                    <hr class="divider my-4">
-                    <p class="mb-5 text-center">Some Arduino circuits, drawings, projects and future projects</p>
-                    <div class="row no-gutters">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="portfolio-box-caption p-3">
-                                <a href="https://en.wikipedia.org/wiki/Print_server">
-                                    <img class=img-fluid id="pro" src="img/Projects/print server 1.JPG">
-                                </a>
-                                <div class="project-name">
-                                    DIY Home Print Server
-                                </div>
-                                <div class="project-category text-black-50">
-                                    This is a screenshot of a print server I set up in my house. I used an old Optiplex750 as the PC and an old Bell Router. I set up a new wireless signal from the Router. This allowed our family to connect to the Wi-Fi and print! For this project, I needed
-                                    Networking Skills and PC skills which I gained from the Cisco ITE Course<br> Next Steps: Add a Router that can act as a bridge to allow printing on main house Wi-Fi.
-                                </div>
-                            </div>
-                        </div>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                        <div class="col-lg-4 col-sm-6 text-center">
-                            <div class="portfolio-box-caption p-3">
-                                <a href="https://en.wikipedia.org/wiki/Home_automation">
-                                    <img class=img-fluid id="pro" src="img/Projects/door bb.JPG">
-                                </a>
-                                <div class="project-name">
-                                    Dream Automated Room
-                                </div>
-                                <div class="project-category text-black-50 text-center">
-                                    This is a schematic/drawing of my ideal SMART room integrated with the latest home automation technology. This includes Smart Lights that dim and turn off on voice, a locking mechanism on my door using NFC or RFID, Camera syste that detects me and intruders,
-                                    Bluetooth speaker system which can be controlled from any verified device and SMART ALARM which would allow me to use light and sound to wake me in the morning<br> Next Steps: Begin
-                                    assessing what is realistic with my budget and available technology and begin prototyping SMART Security with an Arduino
-                                </div>
-                                <video width="120" height="200" controls>
-                                    <source src="img/Projects/mov.mp4" type="video/mp4">
-                            </div>
-                        </div>
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-                        <div class="col-lg-4 col-sm-6 text-center">
-                            <div class="portfolio-box-caption p-3">
-                                <a href="https://en.wikipedia.org/wiki/Home_automation">
-                                    <img class=img-fluid id="pro" src="img/Projects/Ard.JPG">
-                                </a>
-                                <div class="project-name">
-                                    Arduino Projects
-                                </div>
-                                <div class="project-category text-black-50">
-                                    <p class="text-right">I have done many Arduino projects such as an LCD Display,
-                                        Arduino to Stepper motor interface, Infrared Remote to LCD Display and an
-                                        Ultrasonic Detector. The most interesting project was a Temperature & Humidity
-                                        Sensor used for plant growing. The picture of the schematic is up above</p>
-                                    <a href="https://github.com/AkshatDoc/Arduino-Programs"
-                                        class="text-muted-50 text-center">Here are programs that I have worked on for
-                                        the Arduino</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-    <div class="parallax2">
-        </div>
-    <section class="page-section" id="soft">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 ">
-                    <h2 class="mt-0 text-center">Software</h2>
-                    <hr class="divider my-4">
-                    <p class="mb-5 text-center">Projects using different code languages</p>
-                    <div class="row no-gutters">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="portfolio-box-caption p-3">
-                                <img class=img-fluid id="pro" src="img/Projects/coming-soon-v2.jpg">
-                                </a>
-                                <div class="project-name">
-                                    CakeMap
-                                </div>
-                                <div class="project-category text-black-50">
-                                    CakeMap is a Uber-like app that allows users to order different sweets and desserts
-                                    from bakeries. This was an exercise in using Maps API as well as ListView <br>
-                                    Next Steps: Create better sign in and ordering methods
-                                    <a href="https://github.com/AkshatDoc/CakeMap"
-                                        class="text-muted-50 text-center">Here is the program</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6">
-                            <p class="text-center">
-                            </p>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="portfolio-box-caption p-3">
-                                <img class=img-fluid id="pro" src="img/Projects/coming-soon-v2.jpg">
-                                </a>
-                                <div class="project-name">
-                                    Shopping List
-                                </div>
-                                <div class="project-category text-black-50">
-                                    <p class="text-right">A collaborative shopping lost that can be shared between
-                                        multiple users using Firebase and RecyclerView<br>
-                                        Next Steps: Fix RecyclerView bug and barcode scanner
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    </section>
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="bg-light py-5">
-        <div class="container">
-            <div class="small text-center text-muted">Akshat Doctor</div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/creative.min.js"></script>
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
 
 </body>
 
