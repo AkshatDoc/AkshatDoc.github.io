@@ -23,19 +23,6 @@
     <!-- Theme CSS - Includes Bootstrap -->
     <link href="css/creative.min.css" rel="stylesheet">
 
-
-</head>
-
-<!--
-Author: Werner Stoop, 2012
-This is free and unencumbered software released into the public domain.
-http://unlicense.org/
--->
-<html>
-
-<head>
-    <title>Buzzword Bingo 2.0</title>
-
     <style>
         h2 {
             background: rgb(230, 255, 230);
@@ -46,16 +33,16 @@ http://unlicense.org/
         
         body {
             font-family: Verdana;
-            margin-left: 20px;
-            margin-right: 20px
+            margin-left: 25px;
+            margin-right: 25px;
         }
         
         td {
-            padding: 10px 20px;
-            border-top: 1px solid lightgray;
+            padding: 10px;
+            /* border-top: 1px solid lightgray;
             border-left: 1px solid lightgray;
             border-bottom: 1px solid darkgray;
-            border-right: 1px solid darkgray;
+            border-right: 1px solid darkgray; */
         }
         
         .error {
@@ -84,83 +71,18 @@ http://unlicense.org/
             color: green;
         }
         
-        #instructions {
-            display: none;
-            border: 1px solid green;
-            margin: 10px;
-            padding: 20px;
+        .size {
+            width: 5px;
         }
     </style>
 
     <script type="text/javascript">
         words = [
-            "Agile",
-            "Alignment",
-            "Analytics",
-            "Artifacts",
-            "Audit Trail",
-            "Automated",
-            "Best Practices",
-            "Big Data",
-            "Business Process",
-            "Cloud",
-            "Compliance",
-            "Configurable",
-            "Convergence",
-            "Cross-Platform",
-            "Data Extractions",
-            "Data Manipulation",
-            "Data Validation",
-            "Design Integrity",
-            "Distributed",
-            "Enhancements",
-            "Enterprise",
-            "Gamification",
-            "Harness",
-            "High Level",
-            "HTML5",
-            "Impact",
-            "Incentivize",
-            "Industry Standards",
-            "Infrastructure",
-            "Innovation",
-            "Intellectual capital",
-            "Iterative",
-            "Layered Architecture",
-            "Leverage",
-            "Logistics",
-            "Maintenance Cycle",
-            "Meta Data",
-            "Methodology",
-            "Multi-tiered",
-            "Niche",
-            "On-Line",
-            "Open Source",
-            "Open Standards",
-            "Outside the Box",
-            "Paradigm",
-            "Platform",
-            "Pluggable",
-            "Proactive",
-            "Project",
-            "Relationship",
-            "Requirement",
-            "Right-sizing",
-            "Road Map",
-            "SaaS",
-            "Scalable",
-            "Service Oriented Architecture",
-            "Skills transfer",
-            "Solution",
-            "Streamlined",
-            "Synergise",
-            "Technical",
-            "User Experience",
-            "Utilise",
-            "Value-added",
-            "Web 2.0",
-            "Workflow",
-            "XML"
+            "Dabs", "Talks for 5 minutes", "Talks for 10 minutes", "Talks for 15 minutes", "Talks for 20 minutes",
+            "Talks about Son", "Talks about Daughter", "Teaches partial lesson and then trails off", "What do you think", "You’ re late",
+            "Laughs at own posts", "Makes fun of a student", "FREE SPACE", "Talks about his injuries", "Talks about past work experience",
+            "Off-tangent", "Makes us do room maintenance", "Spend a whole class doing nothing", "Goes away and introduces project", "Gets pissy for no reason",
+            "Won’ t answer question", "Makes us do menial tasks", "Where there 's smoke, there’s fire", "Gets mad for sitting behind organiser", "Gets mad at tapping"
         ];
 
         var cells = {};
@@ -182,7 +104,7 @@ http://unlicense.org/
                         var word = words[i];
                     } while (usedWords.indexOf(word) >= 0);
                     usedWords.push(word);
-                    html += '<td id="cell_' + x + '_' + y + '"><label><input id="chk-cell_' + x + '_' + y + '" type="checkbox" onclick="cellClicked(\'cell_' + x + '_' + y + "')\">" + word + "</label></td>";
+                    html += '<td class="size"id="cell_' + x + '_' + y + '"><label><input id="chk-cell_' + x + '_' + y + '" type="checkbox" onclick="cellClicked(\'cell_' + x + '_' + y + "')\">" + word + "</label></td>";
                 }
                 html += "</tr>"
             }
@@ -267,12 +189,16 @@ http://unlicense.org/
     </script>
 </head>
 
+<!--
+Author: Werner Stoop, 2012
+This is free and unencumbered software released into the public domain.
+http://unlicense.org/
+-->
+<html>
+
+
 <body onLoad="start()">
-    <h1>Buzzword Bingo 2.0</h1>
-
-    An exciting game for 2 or more players that is guaranteed to increase meeting participation.
-
-    <a href="javascript:toggle('instructions');">Instructions...</a>
+    <h1 class="text-center">BINGO!</h1>
 
     <noscript>
 <div class="error">
@@ -283,28 +209,12 @@ You do not have JavaScript enabled. JavaScript must be enabled for this applicat
 </div>
 </noscript>
 
-    <div id="instructions">
-        <h2>Instructions</h2>
-        <ol>
-            <noscript><li>Enable JavaScript</li></noscript>
-            <li>Click <strong>Generate</strong> to create your Bingo board.</li>
-            <li>Print. Or (<em>new in v2.0</em>) keep it open in your browser.</li>
-            <li>Whenever someone uses one of the words during a meeting, check it off.</li>
-            <li>When you've checked off an entire row or column, yell &quot;Bingo&quot;</li>
-            <li>First one to yell &quot;Bingo&quot; is declared the winner. Participants agree upon prizes beforehand.</li>
-        </ol>
-        <p>
-            For more information, see <a href="http://dilbert.com/fast/1994-02-22/" target="_new">here</a>.
-        </p>
-        <p>
-            If you need to add more buzzwords, well, you know where to find the source code.
-        </p>
-    </div>
+
     <form>
         <input type="button" value="Generate" onClick="generate();" />
     </form>
-    <h2>Grid</h2>
-    <div id="grid"></div>
+    <h2>PALMER</h2>
+    <div class="text-center" id="grid"></div>
 </body>
 
 </html>
