@@ -90,6 +90,8 @@
             "Won’ t answer question", "Menial tasks", "Where there 's smoke, there’s fire", "Free space", "Gets mad at tapping"
         ];
 
+        var clicked = false;
+
         var cells = {};
 
         function generate() {
@@ -109,7 +111,7 @@
                         var word = words[i];
                     } while (usedWords.indexOf(word) >= 0);
                     usedWords.push(word);
-                    html += '<td class="size" id="cell_' + x + '_' + y + '"><label><input class = "click" id="chk-cell_' + x + '_' + y + '" type="radio" onclick="cellClicked(\'cell_' + x + '_' + y + "')\">" + word + "</label></td>";
+                    html += '<td class="size" id="cell_' + x + '_' + y + '"><label><input class = "click" id="chk-cell_' + x + '_' + y + '" type="checkbox" onclick="cellClicked(\'cell_' + x + '_' + y + "')\">" + word + "</label></td>";
                 }
                 html += "</tr>"
             }
