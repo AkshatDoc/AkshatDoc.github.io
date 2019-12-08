@@ -180,23 +180,24 @@
                 document.getElementById("p1").innerHTML = "WIN";
             } else if (winDiag()) {
                 document.getElementById("p1").innerHTML = "WIN";
+            } else if (winDiagOpp()) {
+                document.getElementById("p1").innerHTML = "WIN";
             } else {
                 document.getElementById("p1").innerHTML = "LOSE";
             }
         }
 
 
-        function windiag() {
+        function winDiag() {
             var checky = 0;
             for (var a = 0; a < 5; a++) {
-                b = a
+                var b = a
                 var id = 'cell_' + a + '_' + b;
                 var d = document.getElementById(id);
-                console.log(d);
                 if (d.className == "highlight") {
                     checky++;
-                    console.log("checked");
-                    console.log(checky);
+                    // console.log("checked");
+                    // console.log(checky);
                     if (checky == 5) {
                         return true;
                     }
@@ -204,19 +205,37 @@
             }
         }
 
+        function winDiagOpp() {
+            for (var a = 0; a < 5; a++) {
+                var b = 5 - a
+                var id = 'cell_' + a + '_' + b;
+                var d = document.getElementById(id);
+                if (d.className == "highlight") {
+                    checky++;
+                    // console.log("checked");
+                    // console.log(checky);
+                    if (checky == 5) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+
+
         function winR() {
             // document.getElementById("p1").innerHTML = "New text!";
-            console.log("run");
+            //console.log("run");
             for (var b = 0; b < 5; b++) {
                 var checky = 0;
                 for (var a = 0; a < 5; a++) {
                     var id = 'cell_' + a + '_' + b;
                     var d = document.getElementById(id);
-                    console.log(d);
+                    //console.log(d);
                     if (d.className == "highlight") {
                         checky++;
-                        console.log("checked");
-                        console.log(checky);
+                        //console.log("checked");
+                        //console.log(checky);
                         if (checky == 5) {
                             return true;
                         }
@@ -229,17 +248,17 @@
 
         function winC() {
             // document.getElementById("p1").innerHTML = "New text!";
-            console.log("run");
+            //console.log("run");
             for (var a = 0; a < 5; a++) {
                 var checky = 0;
                 for (var b = 0; b < 5; b++) {
                     var id = 'cell_' + a + '_' + b;
                     var d = document.getElementById(id);
-                    console.log(d);
+                    //console.log(d);
                     if (d.className == "highlight") {
                         checky++;
-                        console.log("checked");
-                        console.log(checky);
+                        //console.log("checked");
+                        //console.log(checky);
                         if (checky == 5) {
                             return true;
                         }
@@ -261,14 +280,14 @@
             } else {
                 alert("Your browser does not support localStorage.\nYou won't be able to persist the Bingo grid.\nUpgrading your browser may help.");
                 return;
-            }
 
-            var grid = load("BuzzwordBingo.grid");
-            if (grid) {
-                console.log("Loaded a previously generated grid");
-                var node = document.getElementById("grid");
-                node.innerHTML = grid;
-                loadGameState();
+                var grid = load("BuzzwordBingo.grid");
+                if (grid) {
+                    console.log("Loaded a previously generated grid");
+                    var node = document.getElementById("grid");
+                    node.innerHTML = grid;
+                    loadGameState();
+                }
             }
         }
     </script>
