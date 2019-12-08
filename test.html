@@ -172,6 +172,84 @@
             return null
         };
 
+        function winGame() {
+
+            if (winR()) {
+                document.getElementById("p1").innerHTML = "WIN";
+            } else if (winC()) {
+                document.getElementById("p1").innerHTML = "WIN";
+            } else if (winDiag()) {
+                document.getElementById("p1").innerHTML = "WIN";
+            } else {
+                document.getElementById("p1").innerHTML = "LOSE";
+            }
+        }
+
+
+        function windiag() {
+            var checky = 0;
+            for (var a = 0; a < 5; a++) {
+                b = a
+                var id = 'cell_' + a + '_' + b;
+                var d = document.getElementById(id);
+                console.log(d);
+                if (d.className == "highlight") {
+                    checky++;
+                    console.log("checked");
+                    console.log(checky);
+                    if (checky == 5) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        function winR() {
+            // document.getElementById("p1").innerHTML = "New text!";
+            console.log("run");
+            for (var b = 0; b < 5; b++) {
+                var checky = 0;
+                for (var a = 0; a < 5; a++) {
+                    var id = 'cell_' + a + '_' + b;
+                    var d = document.getElementById(id);
+                    console.log(d);
+                    if (d.className == "highlight") {
+                        checky++;
+                        console.log("checked");
+                        console.log(checky);
+                        if (checky == 5) {
+                            return true;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        function winC() {
+            // document.getElementById("p1").innerHTML = "New text!";
+            console.log("run");
+            for (var a = 0; a < 5; a++) {
+                var checky = 0;
+                for (var b = 0; b < 5; b++) {
+                    var id = 'cell_' + a + '_' + b;
+                    var d = document.getElementById(id);
+                    console.log(d);
+                    if (d.className == "highlight") {
+                        checky++;
+                        console.log("checked");
+                        console.log(checky);
+                        if (checky == 5) {
+                            return true;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
         function start() {
             if (supports_html5_storage()) {
                 save = function(key, value) {
@@ -222,6 +300,10 @@ You do not have JavaScript enabled. JavaScript must be enabled for this applicat
     </form>
     <h2>PALMER</h2>
     <div class="text-center" id="grid"></div>
+    <button onclick="winGame()">Win</button>
+
+
+    <p class="text-black-50" id="p1"></p>
 </body>
 
 </html>
