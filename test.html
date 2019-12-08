@@ -185,8 +185,16 @@
             } else {
                 document.getElementById("p1").innerHTML = "LOSE";
             }
+            var f = document.getElementById("win");
+            f.style.display = "none";
+
+
         }
 
+
+        /* 
+        Figure out timestamps dumbass
+        */
 
         function winDiag() {
             var checky = 0;
@@ -239,6 +247,8 @@
                         if (checky == 5) {
                             return true;
                         }
+                    } else {
+                        break;
                     }
 
 
@@ -319,7 +329,7 @@ You do not have JavaScript enabled. JavaScript must be enabled for this applicat
     </form>
     <h2>PALMER</h2>
     <div class="text-center" id="grid"></div>
-    <button onclick="winGame()">Win</button>
+    <button id="win" onclick="winGame()">Win</button>
 
 
     <p class="text-black-50" id="p1"></p>
