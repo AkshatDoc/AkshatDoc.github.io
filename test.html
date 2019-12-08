@@ -25,10 +25,8 @@
 
     <style>
         h2 {
-            background: rgb(230, 255, 230);
             text-align: center;
             padding: 10px;
-            border: 1px solid green;
         }
         
         body {
@@ -95,6 +93,10 @@
         var cells = {};
 
         function generate() {
+            document.getElementById("p1").innerHTML = "In game";
+            document.getElementById("time").innerHTML = "Time";
+            var f = document.getElementById("win");
+            f.style.display = "inline";
             var usedWords = [];
 
             var node = document.getElementById("grid");
@@ -131,6 +133,7 @@
         }
 
         function cellClicked(id) {
+
             var c = document.getElementById("chk-" + id);
             var d = document.getElementById(id);
             d.className = (c.checked) ? "highlight" : "";
@@ -185,9 +188,11 @@
             } else {
                 document.getElementById("p1").innerHTML = "LOSE";
             }
+            var dt = new Date();
+            var utcDate = dt.toLocaleTimeString();
             var f = document.getElementById("win");
             f.style.display = "none";
-
+            document.getElementById("time").innerHTML = utcDate;
 
         }
 
@@ -214,8 +219,9 @@
         }
 
         function winDiagOpp() {
+            var checky = 0;
             for (var a = 0; a < 5; a++) {
-                var b = 5 - a
+                var b = 4 - a;
                 var id = 'cell_' + a + '_' + b;
                 var d = document.getElementById(id);
                 if (d.className == "highlight") {
@@ -323,16 +329,19 @@ You do not have JavaScript enabled. JavaScript must be enabled for this applicat
 </div>
 </noscript>
 
-
+    <h2>PALMER</h2>
     <form>
         <input type="button" value="Generate" onClick="generate();" />
     </form>
-    <h2>PALMER</h2>
-    <div class="text-center" id="grid"></div>
-    <button id="win" onclick="winGame()">Win</button>
+    <div class="text-center">
+        <div id="grid"></div>
 
+        <button id="win" onclick="winGame()">Win</button>
 
-    <p class="text-black-50" id="p1"></p>
+        <p class="text-black-50" id="p1"></p>
+
+        <p class="text-center" id="time"></p>
+    </div>
 </body>
 
 </html>
