@@ -205,11 +205,19 @@
             } else {
                 document.getElementById("p1").innerHTML = "LOSE";
             }
+            for (var x = 0; x < 5; x++) {
+                for (var y = 0; y < 5; y++) {
+                    console.log("done");
+                    var btn = "chk-cell_" + x + "_" + y;
+                    document.getElementById(btn).disabled = true;
+                }
+            }
             var dt = new Date();
             var utcDate = dt.toLocaleTimeString();
             var f = document.getElementById("win");
             f.style.display = "none";
             document.getElementById("time").innerHTML = utcDate;
+
 
         }
 
