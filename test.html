@@ -60,12 +60,11 @@
         
         td label {
             cursor: pointer;
+            word-break: keep-all;
         }
         
         form {
             width: fit-content;
-            margin: 5px;
-            padding: 5px;
             color: green;
         }
         
@@ -93,6 +92,8 @@
         var cells = {};
 
         function generate() {
+            var safe = false;
+
             document.getElementById("p1").innerHTML = "In game";
             document.getElementById("time").innerHTML = "Time";
             var f = document.getElementById("win");
@@ -106,7 +107,7 @@
 
             var html = '<table border="0">';
             for (var y = 0; y < 5; y++) {
-                html += "<tr>"
+                html += "<tr>";
                 for (var x = 0; x < 5; x++) {
                     do {
                         var i = Math.round(Math.random() * (words.length - 1));
@@ -137,6 +138,7 @@
             save("BuzzwordBingo.grid", html);
             saveGameState();
         }
+
 
         /* http://diveintohtml5.info/storage.html */
         function supports_html5_storage() {
@@ -330,6 +332,7 @@ This is free and unencumbered software released into the public domain.
 http://unlicense.org/
 -->
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 <body onLoad="start()">
@@ -356,6 +359,7 @@ You do not have JavaScript enabled. JavaScript must be enabled for this applicat
         <p class="text-black-50" id="p1"></p>
 
         <p class="text-center" id="time"></p>
+
     </div>
 </body>
 
