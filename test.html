@@ -192,6 +192,16 @@
             return null
         };
 
+        for (var x = 0; x < 5; x++) {
+            for (var y = 0; y < 5; y++) {
+                var id = 'cell_' + x + '_' + y;
+                document.getElementById(id).addEventListener("click", winGame);
+
+            }
+        }
+
+
+
         function winGame() {
 
             if (winR()) {
@@ -203,11 +213,10 @@
             } else if (winDiagOpp()) {
                 document.getElementById("p1").innerHTML = "WIN";
             } else {
-                document.getElementById("p1").innerHTML = "LOSE";
+                break;
             }
             for (var x = 0; x < 5; x++) {
                 for (var y = 0; y < 5; y++) {
-                    console.log("done");
                     var btn = "chk-cell_" + x + "_" + y;
                     document.getElementById(btn).disabled = true;
                 }
@@ -217,8 +226,6 @@
             var f = document.getElementById("win");
             f.style.display = "none";
             document.getElementById("time").innerHTML = utcDate;
-
-
         }
 
 
@@ -362,7 +369,7 @@ You do not have JavaScript enabled. JavaScript must be enabled for this applicat
     <div class="text-center">
         <div id="grid"></div>
 
-        <button id="win" onclick="winGame()">Win</button>
+        <button id="win">Win</button>
 
         <p class="text-black-50" id="p1"></p>
 
