@@ -195,25 +195,24 @@
         for (var x = 0; x < 5; x++) {
             for (var y = 0; y < 5; y++) {
                 var id = 'cell_' + x + '_' + y;
-                document.getElementById(id).addEventListener("click", winGame);
+                document.getElementById(id).addEventListener("click", winGame());
 
             }
         }
 
-
-
         function winGame() {
-
+            var result = "lose"
             if (winR()) {
-                document.getElementById("p1").innerHTML = "WIN";
+                result = "WIN";
             } else if (winC()) {
-                document.getElementById("p1").innerHTML = "WIN";
+                result = "WIN";
             } else if (winDiag()) {
-                document.getElementById("p1").innerHTML = "WIN";
+                result = "WIN";
             } else if (winDiagOpp()) {
-                document.getElementById("p1").innerHTML = "WIN";
+                result = "WIN";
             } else {
-                break;
+                result = "LOSE";
+
             }
             for (var x = 0; x < 5; x++) {
                 for (var y = 0; y < 5; y++) {
@@ -226,7 +225,15 @@
             var f = document.getElementById("win");
             f.style.display = "none";
             document.getElementById("time").innerHTML = utcDate;
+            var person = prompt("Please enter your name:", "Harry Potter");
+            if (person == null || person == "") {
+                txt = "User cancelled the prompt.";
+            } else {
+                txt = "Hello " + person + "! You " + result;
+            }
+            document.getElementById("p1").innerHTML = txt;
         }
+
 
 
         /* 
@@ -369,11 +376,13 @@ You do not have JavaScript enabled. JavaScript must be enabled for this applicat
     <div class="text-center">
         <div id="grid"></div>
 
-        <button id="win">Win</button>
+        <button id="win" onclick="winGame()">Win</button>
 
         <p class="text-black-50" id="p1"></p>
 
         <p class="text-center" id="time"></p>
+
+
 
     </div>
 </body>
