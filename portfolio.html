@@ -83,34 +83,41 @@
     <!--  <div class="parallax2">
     </div>-->
 
-    <section>
-        <div class="slideshow-container">
-
-            <div class="mySlides">
-                <img src="img/ME.jpg" style="width:100%;;" class="active">
-                <div class="text">Caption Text</div>
+    <section class="page-section bg-secondary" id="about">
+        <div class="container">
+            <div class="text-center">
+                <a class="btn btn-primary btn-xl w3-text-white" id="portButton" style="margin-bottom: 10%;" onclick="showPortfolio()">Click here for Portfolio</a>
             </div>
+            <div class="slideshow-container" id="button-layout" style="display: none;">
 
-            <div class="mySlides">
-                <img src="img/Projects/potential cnc.jpg " style="width:100% ">
-                <div class="text ">Caption Two</div>
+                <div class="mySlides">
+                    <img src="img/ME.jpg" style="width:100%;">
+                    <div class="text">Caption Text</div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="img/Projects/potential cnc.jpg " style="width:100% ">
+                    <div class="text ">Caption Two</div>
+                </div>
+
+                <div class="mySlides ">
+                    <img src="img/Projects/render 2.JPG" style="width:100% ">
+                    <div class="text ">Caption Three</div>
+                </div>
+
+                <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
+                <a class="next " onclick="plusSlides(1) ">&#10095;</a>
+
             </div>
-
-            <div class="mySlides ">
-                <img src="img/Projects/render 2.JPG" style="width:100% ">
-                <div class="text ">Caption Three</div>
-            </div>
-
-            <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
-            <a class="next " onclick="plusSlides(1) ">&#10095;</a>
-
         </div>
         <br>
 
-        <div style="text-align:center ">
-            <span class="dot " onclick="currentSlide(1) "></span>
-            <span class="dot " onclick="currentSlide(2) "></span>
-            <span class="dot " onclick="currentSlide(3) "></span>
+        <div id="dotHome" style="display: none;">
+            <div style="text-align:center">
+                <span class="dot active" onclick="currentSlide(0) "></span>
+                <span class="dot " onclick="currentSlide(1) "></span>
+                <span class="dot " onclick="currentSlide(2) "></span>
+            </div>
         </div>
     </section>
 
