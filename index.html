@@ -29,19 +29,42 @@
 
 <body id="page-top">
 
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+
+        <div class="navbar-nav ml-auto my-2 my-lg-0 text-left">
+            <button id="myBtn" class="btn text-white text-left js-scroll-trigger"><i class="fas fa-universal-access text-center"></i></button>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="SliderSwitch">
+                    <label for="switch">   Accessibility Colors:  
+                        <input id="switch" type="checkbox" />
+                        <div class="SliderSwitch__container" >
+                            <div class="SliderSwitch__toggle">
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </div>
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Akshat Doctor</a>
+
+            <a class="navbar-brand js-scroll-trigger text-center" href="#page-top">Akshat Doctor</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <div class="dropdown nav-item">
-                        <a class="dropbtn nav-link js-scroll-trigger" href="index.html"><i class="fas fa-home"> Main Page</i> <i class="fas fa-caret-down"></i></a>
+                        <a class="dropbtn nav-link js-scroll-trigger" href="index.html"><i class="fas fa-home"> Main Page</i></a>
                         </li>
                         <div class="dropdown-content">
                             <li class="nav-item">
@@ -51,10 +74,17 @@
                         </div>
                     </div>
                     <div class="dropdown nav-item">
-                        <a class="dropbtn nav-link js-scroll-trigger" href="portfolio.html"><i class="fas fa-drafting-compass"> Projects</i> <i class="fas fa-caret-down"></i></a>
+                        <a class="dropbtn nav-link js-scroll-trigger" href="portfolio.html"><i class="fas fa-drafting-compass"> Portfolio</i></a>
+                        </li>
+                    </div>
+
+                    <div class="dropdown nav-item">
+                        <a class="dropbtn nav-link js-scroll-trigger"><i class="far fa-file"> Resumes</i></a>
                         </li>
                         <div class="dropdown-content">
                             <li class="nav-item">
+                                <a class="dropbtn nav-link js-scroll-trigger" href="AKSHAT RESUME MECHANICAL.pdf"><i class="fas fa-tools"> Mechanical CV</i></a>
+                                <a class="dropbtn nav-link js-scroll-trigger" href="AKSHAT RESUME SOFTWARE.pdf"><i class="fas fa-laptop-code">Software CV</i></a>
                             </li>
                         </div>
                     </div>
@@ -82,22 +112,10 @@
         </div>
     </header>
 
-
-    <!-- 
-                <div id="myModal" class="modal">
-
-                    <div class="modal-content">
-                        <span class="close text-right">&times;</span>
-                        <p class="text-black-50 mb-4">Welcome! This website is maintained by Akshat Doctor. If you do find any bugs, please email <a href="mailto:akshatdr@gmail.com ">him</a>
-                        </p>
-                    </div>
-                </div> -->
-
-
     <section class="parallax ">
     </section>
     <!-- About Section -->
-    <section class="page-section bg-primary" id="about">
+    <section class="page-section bg-secondary" id="about">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">

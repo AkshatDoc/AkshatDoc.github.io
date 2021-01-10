@@ -30,19 +30,43 @@
 
 <body id="page-top">
 
+
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+
+        <div class="navbar-nav ml-auto my-2 my-lg-0 text-left">
+            <button id="myBtn" class="btn text-white text-left js-scroll-trigger"><i class="fas fa-universal-access text-center"></i></button>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="SliderSwitch">
+                    <label for="switch">   Accessibility Colors:  
+                        <input id="switch" type="checkbox" />
+                        <div class="SliderSwitch__container" >
+                            <div class="SliderSwitch__toggle">
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </div>
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Akshat Doctor</a>
+
+            <a class="navbar-brand js-scroll-trigger text-center" href="#page-top">Akshat Doctor</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <div class="dropdown nav-item">
-                        <a class="dropbtn nav-link js-scroll-trigger" href="index.html"><i class="fas fa-home"> Main Page</i> <i class="fas fa-caret-down"></i></a>
+                        <a class="dropbtn nav-link js-scroll-trigger" href="index.html"><i class="fas fa-home"> Main Page</i></a>
                         </li>
                         <div class="dropdown-content">
                             <li class="nav-item">
@@ -52,10 +76,17 @@
                         </div>
                     </div>
                     <div class="dropdown nav-item">
-                        <a class="dropbtn nav-link js-scroll-trigger" href="portfolio.html"><i class="fas fa-drafting-compass"> Projects</i> <i class="fas fa-caret-down"></i></a>
+                        <a class="dropbtn nav-link js-scroll-trigger" href="portfolio.html"><i class="fas fa-drafting-compass"> Portfolio</i></a>
+                        </li>
+                    </div>
+
+                    <div class="dropdown nav-item">
+                        <a class="dropbtn nav-link js-scroll-trigger"><i class="far fa-file"> Resumes</i></a>
                         </li>
                         <div class="dropdown-content">
                             <li class="nav-item">
+                                <a class="dropbtn nav-link js-scroll-trigger" href="AKSHAT RESUME MECHANICAL.pdf"><i class="fas fa-tools"> Mechanical CV</i></a>
+                                <a class="dropbtn nav-link js-scroll-trigger" href="AKSHAT RESUME SOFTWARE.pdf"><i class="fas fa-laptop-code">Software CV</i></a>
                             </li>
                         </div>
                     </div>
@@ -80,34 +111,70 @@
         </div>
     </section>
 
-    <!--  <div class="parallax2">
-    </div>-->
+    <section id="gradientBack">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+
 
     <section class="page-section bg-secondary" id="about">
         <div class="container">
             <div class="text-center">
-                <a class="btn btn-primary btn-xl w3-text-white" id="portButton" style="margin-bottom: 10%;" onclick="showPortfolio()">Click here for Portfolio</a>
+                <a class="btn btn-primary btn-xl w3-text-white" id="portButton" style="margin-bottom: 10%;" onclick="showPortfolio()">Click here to see the Online Portfolio</a>
             </div>
             <div class="slideshow-container" id="button-layout" style="display: none;">
 
-                <div class="mySlides">
-                    <img src="img/ME.jpg" style="width:100%;">
-                    <div class="text">Caption Text</div>
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide1.JPG" style="width:100%;">
                 </div>
 
-                <div class="mySlides">
-                    <img src="img/Projects/potential cnc.jpg " style="width:100% ">
-                    <div class="text ">Caption Two</div>
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide2.JPG " style="width:100% ">
                 </div>
 
-                <div class="mySlides ">
-                    <img src="img/Projects/render 2.JPG" style="width:100% ">
-                    <div class="text ">Caption Three</div>
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide3.JPG" style="width:100% ">
                 </div>
 
-                <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
-                <a class="next " onclick="plusSlides(1) ">&#10095;</a>
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide4.JPG" style="width:100% ">
+                </div>
 
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide5.JPG" style="width:100% ">
+                </div>
+
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide6.JPG" style="width:100% ">
+                </div>
+
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide7.JPG" style="width:100% ">
+                </div>
+
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide8.JPG" style="width:100% ">
+                </div>
+
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide9.JPG" style="width:100% ">
+                    <div class="text">Here is the link to the video: <a href="https://youtu.be/gXZZf-ruHqc"> start at 2:04</a></div>
+                </div>
+                <div class="mySlides fades">
+                    <img src="img/portfolio/AKSHAT DOCTOR Portfolio images/Slide10.JPG" style="width:100% ">
+                </div>
             </div>
         </div>
         <br>
@@ -117,222 +184,33 @@
                 <span class="dot active" onclick="currentSlide(0) "></span>
                 <span class="dot " onclick="currentSlide(1) "></span>
                 <span class="dot " onclick="currentSlide(2) "></span>
+                <span class="dot " onclick="currentSlide(3) "></span>
+                <span class="dot " onclick="currentSlide(4) "></span>
+                <span class="dot " onclick="currentSlide(5) "></span>
+                <span class="dot " onclick="currentSlide(6) "></span>
+                <span class="dot " onclick="currentSlide(7) "></span>
+                <span class="dot " onclick="currentSlide(8) "></span>
+                <span class="dot " onclick="currentSlide(9) "></span>
+
             </div>
         </div>
+
+        <div class="container">
+            <div class="text-center">
+                <a class="btn btn-primary btn-xl w3-text-white" id="portButton" style="margin-top: 10%;" href="AKSHAT DOCTOR Portfolio.pptx">Download Portfolio (.ppt)</a>
+                <a class="btn btn-primary btn-xl w3-text-white" id="portButton" style="margin-top: 10%;" href="AKSHAT MECHANICAL PORTFOLIO.pdf">Download Portfolio (.pdf)</a>
+            </div>
+
+            <div class="container">
+                <div class="text-center">
+                </div>
+
+
+
     </section>
 
 
-    <!-- Tech Design Section 
-    <section class="page-section " id="td ">
-        <div class="container ">
-            <div class="row justify-content-center ">
-                <div class="col-lg-8 text-center ">
-                    <h2 class="mt-0 ">Tech Design</h2>
-                    <hr class="divider my-4 ">
-                    <h6 class="text-black-50 ">I have done many dfferent projects using SolidWorks and highlighted here are my favourite projects!</h6>
-                    <div class="row no-gutters ">
-                        <div class="col-lg-4 col-sm-6 ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <a href="https://en.wikipedia.org/wiki/Numerical_control ">
-                                    <img class="img-fluid " id="pro " src="img/Projects/potential cnc.jpg ">
-                                </a>
-                                <div class="project-name ">
-                                    <p>DIY CNC</p>
-                                </div>
-                                <div class="project-category text-black-50 ">
-                                    <p>After using my school's CNC, I gained an obsession with automated macheniry. I decided that I wanted to make my own CNC. I went through many many different design iterations, using different technologies, like sliders
-                                        or rods and I finally came up with one design. This design allows people to change the head from a router bit to a laser bit and much much more.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-4 col-sm-6 ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <a href="https://docs.google.com/document/d/1DeT880G7rjqpRm6dZO_b6yHANUGUqOPrHQB0vYl4-W8/edit?usp=sharing ">
-                                    <img class="img-fluid " id="pro " src="img/Projects/render 2.JPG ">
-                                </a>
-                                <div class="project-name ">
-                                    <p>ChairBot</p>
-                                </div>
-                                <div class="project-category text-black-50 ">
-                                    <p>In my grade 12 Tech Design class, I was given the opportunity to design a new outreach robot for our team. Previously, we had a plastic chair on top of a small robot, which worked really well. The main problem I had
-                                        with it was how it looked, so I decided to change that up. At first, I wanted to put an office chair on it but then I realized that it would be much safer is was a leaned back chair, like an Adirondack! I designed
-                                        this along with the robot for 2 weeks and am currently in the build stage of the project! Photos coming soon</p>
-                                </div>
-                                <a class="btn btn-primary text-center " href="https://workbench.grabcad.com/workbench/projects/gcwO8fleTy2JizJe2-dkbF_X8bmmtTxZuKnmJ48ZpISbMI#/space/gc1PGDb7CWmoeuY9srAtey1bsyx__bUNAOJXK-fY_3-ZT- ">Some
-                                    more projects</a>
-                                <br>
-                                <a href="https://akshatdr.wixsite.com/akshatdoc ">My old website</a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6 ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <a href="https://docs.google.com/document/d/1gII_WA7yFct347TZ7fXqOOybJGZbgkyJEBTmJEEMiqI/edit?usp=sharing ">
-                                    <img class="img-fluid " id="pro " src="img/Projects/PT Tech .jpg ">
-                                </a>
-                                <div class="project-name ">
-                                    <p>Shelf Life</p>
-                                </div>
-                                <div class="project-category text-black-50 ">
-                                    <p>In my grade 11 Tech Design class, I was given the opportunity to design a project of my choosing. I wanted to design a shelving system for people who were unable to reach high shelves and wanted autonomous living. I
-                                        took inspiration from a specific company from Sweden:<a href="https://www.granberg.se/en/our-products/accessible-kitchen/lifting-systems-wall-cabinet/ ">Granberg</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="parallax2 ">
-    </div>
-
-    Comp Engineering Section
-    <section class="page-section " id="compeng ">
-        <div class="container ">
-            <div class="row justify-content-center ">
-                <div class="col-lg-8 ">
-                    <h2 class="mt-0 text-center ">Computer Engineering</h2>
-                    <hr class="divider my-4 ">
-                    <p class="mb-5 text-center ">Some Arduino circuits, drawings, projects and future projects</p>
-                    <div class="row no-gutters ">
-                        <div class="col-lg-4 col-sm-6 ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <a href="https://en.wikipedia.org/wiki/Print_server ">
-                                    <img class=img-fluid id="pro " src="img/Projects/print server 1.JPG ">
-                                </a>
-                                <div class="project-name ">
-                                    DIY Home Print Server
-                                </div>
-                                <div class="project-category text-black-50 ">
-                                    This is a screenshot of a print server I set up in my house. I used an old Optiplex750 as the PC and an old Bell Router. I set up a new wireless signal from the Router. This allowed our family to connect to the Wi-Fi and print! For this project, I needed
-                                    Networking Skills and PC skills which I gained from the Cisco ITE Course<br> Next Steps: Add a Router that can act as a bridge to allow printing on main house Wi-Fi.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6 text-center ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <a href="https://en.wikipedia.org/wiki/Home_automation ">
-                                    <img class=img-fluid id="pro " src="img/Projects/door bb.JPG ">
-                                </a>
-                                <div class="project-name ">
-                                    Dream Automated Room
-                                </div>
-                                <div class="project-category text-black-50 text-center ">
-                                    This is a schematic/drawing of my ideal SMART room integrated with the latest home automation technology. This includes Smart Lights that dim and turn off on voice, a locking mechanism on my door using NFC or RFID, Camera syste that detects me and intruders,
-                                    Bluetooth speaker system which can be controlled from any verified device and SMART ALARM which would allow me to use light and sound to wake me in the morning<br> Next Steps: Begin
-                                    assessing what is realistic with my budget and available technology and begin prototyping SMART Security with an Arduino
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6 text-center ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <a href="https://en.wikipedia.org/wiki/Home_automation ">
-                                    <img class=img-fluid id="pro " src="img/Projects/Ard.JPG ">
-                                </a>
-                                <div class="project-name ">
-                                    Arduino Projects
-                                </div>
-                                <div class="project-category text-black-50 ">
-                                    <p class="text-right ">I have done many Arduino projects such as an LCD Display, Arduino to Stepper motor interface, Infrared Remote to LCD Display and an Ultrasonic Detector. The most interesting project was a Temperature & Humidity Sensor
-                                        used for plant growing. The picture of the schematic is up above</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-    <div class="parallax2 ">
-    </div>
-    <section class="page-section " id="soft ">
-        <div class="container ">
-            <div class="row justify-content-center ">
-                <div class="col-lg-8 ">
-                    <h2 class="mt-0 text-center ">Software</h2>
-                    <hr class="divider my-4 ">
-                    <p class="mb-5 text-center ">Projects using different code languages</p>
-                    <div class="row no-gutters ">
-                        <div class="col-lg-4 col-sm-6 ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <img class=img-fluid id="pro " src="img/Projects/cakeIcon-web.png ">
-                                </a>
-                                <div class="project-name ">
-                                    CakeMap
-                                </div>
-                                <div class="project-category text-black-50 ">
-                                    CakeMap is a Uber-like app that allows users to order different sweets and desserts from bakeries. This was an exercise in using Maps API as well as ListView <br> Next Steps: Create better sign in and ordering methods
-                                    <a href="https://github.com/AkshatDoc/CakeMap " class="text-muted-50 text-center ">Here is the program</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6 ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <img class=img-fluid id="pro " src="img/Projects/pyUno.jpg ">
-                                </a>
-                                <div class="project-name ">
-                                    Light Control
-                                </div>
-                                <div class="project-category text-black-50 ">
-                                    <p class="text-center ">A Python + Arduino project in which a room light is controlled via two methods. The two methods are via Voice and Flask(web server)<br> Next Steps: Deploy Flask Server Fit relay into the actual light Add more functionality
-                                        to the room
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-sm-6 ">
-                            <div class="portfolio-box-caption p-3 ">
-                                <img class=img-fluid id="pro " src="img/Projects/ard2.png ">
-                                </a>
-                                <div class="project-name ">
-                                    Arduino Projects
-                                </div>
-                                <div class="project-category text-black-50 ">
-                                    <p class="text-right ">Using the Arduino program, here is code for many projects which I never had the associated hardware for<br> Next Steps: Get Hardware
-                                        <a href="https://github.com/AkshatDoc/Arduino-Programs " class="text-muted-50 text-center ">Here are programs that I have worked on for
-                                        the Arduino</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    </section>
-
-
-    <section class="page-section " id="botl ">
-        <div class="container ">
-            <div class="row justify-content-center ">
-                <div class="col-lg-8 ">
-                    <h2 class="mt-0 text-center ">Bottl'd</h2>
-                    <hr class="divider my-4 ">
-                    <p class="mb-5 text-center ">A Club started by OTHS Students to recycle water bottles into greenhouses</p>
-                    <div>
-                        <img class="mySlides w3-animate-fading " src="img/Projects/bottld/IMG_6935.JPG " style="width:100% ">
-                        <img class="mySlides w3-animate-fading " src="img/Projects/bottld/IMG_6939.JPG " style="width:100% ">
-                        <img class="mySlides w3-animate-fading " src="img/Projects/bottld/blue logo on black.png " style="width:100% ">
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    -->
 
 
 
